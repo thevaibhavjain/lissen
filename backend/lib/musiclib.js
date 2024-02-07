@@ -30,32 +30,32 @@ class ServiceProvider {
     }
 
     async getAlbums(count, page) {
-        const data = await this.request(`content.getAlbums&n=${count}&p=${page}`);
+        const data = await this.request(`content.getAlbums&n=${count}&p=${page}&api_version=4&_format=json&_marker=0&n=50&p=1&ctx=web6dot0`);
         return data;
     }
 
     async getCharts() {
-        const data = await this.request(`content.getCharts`);
+        const data = await this.request(`content.getCharts&api_version=4&_format=json&_marker=0&ctx=web6dot0`);
         return data;
     }
 
     async getFeaturedPlaylists(count, page) {
-        const data = await this.request(`content.getFeaturedPlaylists&fetch_from_serialized_files=true&p=${page}&n=${count}`);
+        const data = await this.request(`content.getFeaturedPlaylists&fetch_from_serialized_files=true&p=${page}&n=${count}&_format=json&_marker=0&ctx=web6dot0`);
         return data;
     }
 
     async getTopShows(count, page) {
-        const data = await this.request(`content.getTopShows&n=${count}&p=${page}`);
+        const data = await this.request(`content.getTopShows&n=${count}&p=${page}&_format=json&_marker=0&ctx=web6dot0`);
         return data;
     }
 
     async getTopArtists() {
-        const data = await this.request(`social.getTopArtists`);
+        const data = await this.request(`social.getTopArtists&_format=json&_marker=0&ctx=web6dot0`);
         return data;
     }
 
     async getFeaturedStations() {
-        const data = await this.request(`webradio.getFeaturedStations`);
+        const data = await this.request(`webradio.getFeaturedStations&api_version=4&_format=json&_marker=0&ctx=web6dot0`);
         return data;
     }
 
@@ -82,6 +82,11 @@ class ServiceProvider {
     
     async getLyrics(id) {
         const data = await this.request(`lyrics.getLyrics&lyrics_id=${id}&ctx=web6dot0&api_version=4&_format=json&_marker=0`)
+        return data;
+    }
+    
+    async getSearch(query, page){
+        const data = await this.request(`search.getResults&p=${page}&q=${query}&_format=json&_marker=0&api_version=4&ctx=web6dot0&n=20`)
         return data;
     }
 

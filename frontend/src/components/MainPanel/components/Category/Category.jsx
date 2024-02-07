@@ -72,7 +72,9 @@ const Category = ({ name, data }) => {
       type: item.type,
       title: item.title,
       image: item.image,
-      artists: item.more_info.uid,
+      artists:
+        item.more_info &&
+        item.more_info.uid | item.more_info && item.more_info.firstname,
     };
     return <Card key={index} data={parsed_data} />;
   }
@@ -82,6 +84,26 @@ const Category = ({ name, data }) => {
       id: item.id,
       type: "radio",
       title: item.title,
+      image: item.image,
+    };
+    return <Card key={index} data={parsed_data} />;
+  }
+
+  function handle_artist(item, index) {
+    const parsed_data = {
+      id: item.artistid,
+      type: "artist",
+      title: item.name,
+      image: item.image.replace("150x150", "500x500"),
+    };
+    return <Card key={index} data={parsed_data} />;
+  }
+
+  function handle_top_playlists(item, index) {
+    const parsed_data = {
+      id: item.listid,
+      type: "playlist",
+      title: item.listname,
       image: item.image,
     };
     return <Card key={index} data={parsed_data} />;
@@ -106,6 +128,12 @@ const Category = ({ name, data }) => {
                 return handle_playlist(item, index);
               case "radio":
                 return handle_radio(item, index);
+              case "new_release":
+                return handle_new(item, index);
+              case "featured_playlists":
+                return handle_top_playlists(item, index);
+              case "top_artists":
+                return handle_artist(item, index);
               default:
                 return null;
             }

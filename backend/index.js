@@ -102,6 +102,18 @@ app.get('/api/getPlaylistById', asyncHandler(async (req, res) => {
     await res.json(data);
 }));
 
+app.get('/api/search', asyncHandler(async (req, res) => {
+    const query = req.query;
+    const data = await lib.getSearch(query.query, query.page);
+    await res.json(data);
+}));
+
+
+app.get('/api/getTopSearch', asyncHandler(async (req, res) => {
+    const data = await lib.getTopSearches();
+    await res.json(data);
+}));
+
 app.get('/api/getFeaturedStations', asyncHandler(async (req, res) => {
     const data = await lib.getFeaturedStations();
     await res.json(data);
