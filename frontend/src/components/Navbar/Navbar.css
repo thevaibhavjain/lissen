@@ -1,17 +1,45 @@
 #navbar {
   display: flex;
-  align-items: center;
+  width: 100%;
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
-  width: 100%;
-  font-size: xx-large;
-  font-weight: 600;
-  padding: 10px;
   background-color: #ff6b6b;
-  color: aliceblue;
-  z-index: 1000;
+  height: 63px;
+  align-items: center;
+  justify-content: space-between;
 }
-#navbar svg:hover {
+
+#navbar .logo {
+  display: flex;
+  font-weight: 600;
+  font-size: xx-large;
+  color: aliceblue;
+  margin: 0 20px;
+  align-items: center;
+}
+
+#navbar .logo svg:hover {
   background-color: initial;
+}
+
+#navbar .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar .menu * {
+  height: inherit;
+  padding: 20px 15px;
+  font-size: larger;
+  font-weight: 500;
+}
+#navbar .menu .search {
+  padding: 0 15px !important;
+  line-height: 0;
+}
+#navbar .menu *:hover, #navbar .menu .active {
+  background-color: #cc6262;
 }

@@ -36,8 +36,8 @@ function asyncHandler(fn) {
     };
 }
 
-app.get('/api', asyncHandler(async (req, res) => {
-    await res.json({ message: 'Invalid route /' });
+app.get(['/', '/api'], asyncHandler(async (req, res) => {
+    await res.json({ message: 'Invalid route /api' });
 }));
 
 app.get('/api/getArtist', asyncHandler(async (req, res) => {
