@@ -1,0 +1,12 @@
+.items {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 20px;
+}
+
+.category-name {
+    padding: 10px 30px;
+    font-size: x-large;
+    font-weight: 600;
+    text-transform: uppercase;
+}

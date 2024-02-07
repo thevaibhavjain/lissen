@@ -1,0 +1,159 @@
+.album-main {
+    display: grid;
+    position: relative;
+
+}
+
+.album-details {
+    display: flex;
+}
+
+.banner {
+    overflow: hidden;
+}
+
+.banner img {
+    border-radius: 10px;
+    width: 250px;
+    margin: 10px;
+}
+
+.album-info {
+    padding: 50px 80px;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+}
+
+.btns .play-button {
+    font-size: x-large;
+    font-weight: 600;
+    padding: 15px 30px;
+    background-color: var(--heart);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 200ms all ease-in-out;
+}
+
+.btns .like-button svg {
+    margin: 10px;
+    padding: 15px;
+    border: 2px solid gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.btns .play-button:hover {
+    background-color: rgb(156, 60, 60);
+}
+
+:root {
+  --heart: rgb(219, 93, 93);
+}
+
+.btns svg use, .album-items svg use {
+  fill: transparent;
+  stroke: gray;
+  stroke-width: 2;
+  transition: all 0.33s ease;
+}
+
+.btns svg use:last-child, .album-items svg use:last-child {
+  fill: var(--heart);
+  stroke: var(--heart);
+  opacity: 0;
+  transform: scale(0.33);
+  transform-origin: center;
+}
+
+.btns #on svg use, .album-items #on svg use {
+  stroke: transparent;
+}
+
+.btns #on svg use:last-child, .album-items #on svg use:last-child {
+  opacity: 1;
+  transform: none;
+  transition: all 0.5s cubic-bezier(0.19, 2.41, 0.45, 0.94);
+}
+
+.btns svg, .album-items svg {
+  width: 25px;
+  height: 25px;
+  overflow: visible !important;
+  cursor: pointer;
+}
+
+.btns * {
+    margin-right: 10px;
+}
+
+.btns .hide, .album-items .hide{
+    display: none;
+}
+
+.album-info .album-name {
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.album-info .audience-detail {
+    min-width: fit-content;
+    font-size: large;
+    margin: 15px 0;
+}
+
+.album-info .audience-detail span {
+    margin: 10px 10px 5px 0;
+}
+
+.album-items {
+    display: grid;
+    row-gap: 20px;
+}
+
+.album-items .item {
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: 5% 5% 20% 30% 20% 15%;
+    align-items: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    transition: all 200ms ease-in;
+}
+.album-items .item:hover {
+    background-color: rgb(37, 36, 36);
+}
+
+.album-items .item * {
+    margin-left: 5px;
+}
+
+.album-items .duration {
+    width: initial !important;
+}
+
+.album-items .banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+.album-items .banner img {
+    border-radius: 10px !important;
+    height: inherit;
+    width: inherit;
+}
+
+.album-items span, .album-items a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    cursor: pointer;
+}

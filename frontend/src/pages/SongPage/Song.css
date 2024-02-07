@@ -1,0 +1,138 @@
+
+.song-detailss {
+    display: flex;
+}
+
+.song-detailss .banner {
+    overflow: hidden;
+}
+
+.song-detailss .banner img {
+    border-radius: 10px;
+    width: 250px;
+    margin: 10px;
+}
+
+.song-detailss .song-info_ {
+    padding: 50px 80px;
+}
+
+.song-detailss .btns {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+}
+
+.song-detailss .btns .play-button {
+    font-size: x-large;
+    font-weight: 600;
+    padding: 15px 30px;
+    background-color: var(--heart);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 200ms all ease-in-out;
+}
+
+.song-detailss .btns .like-button svg {
+    margin: 10px;
+    padding: 15px;
+    border: 2px solid gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.song-detailss .btns .play-button:hover {
+    background-color: rgb(156, 60, 60);
+}
+
+:root {
+  --heart: rgb(219, 93, 93);
+}
+
+.song-detailss .btns svg use, .song-items svg use {
+  fill: transparent;
+  stroke: gray;
+  stroke-width: 2;
+  transition: all 0.33s ease;
+}
+
+.song-detailss .btns svg use:last-child, .song-items svg use:last-child {
+  fill: var(--heart);
+  stroke: var(--heart);
+  opacity: 0;
+  transform: scale(0.33);
+  transform-origin: center;
+}
+
+.song-detailss .btns #on svg use, .song-items #on svg use {
+  stroke: transparent;
+}
+
+.song-detailss .btns #on svg use:last-child, .song-items #on svg use:last-child {
+  opacity: 1;
+  transform: none;
+  transition: all 0.5s cubic-bezier(0.19, 2.41, 0.45, 0.94);
+}
+
+.song-detailss .btns svg, .song-items svg {
+  width: 25px;
+  height: 25px;
+  overflow: visible !important;
+  cursor: pointer;
+}
+
+.song-detailss .btns * {
+    margin-right: 10px;
+}
+
+.song-detailss .btns .hide, .song-items .hide{
+    display: none;
+}
+
+.song-detailss .song-info_ .song-name {
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.song-detailss .song-info_ .audience-detail {
+    min-width: fit-content;
+    font-size: large;
+    margin: 15px 0;
+}
+.song-detailss .song-info_ .audience-detail .language {
+    text-transform: capitalize;
+}
+
+.song-detailss .song-info_ .audience-detail span {
+    margin: 10px 10px 5px 0;
+}
+.song-detailss .song-info_ .audience-detail {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    cursor: pointer;
+}
+
+.lyrics-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin: 20px;
+    font-size: larger;
+}
+
+.lyrics-label {
+    width: fit-content;
+    margin: 20px 0;
+    font-size: x-large;
+    font-weight: 600;
+    line-height: 40px;
+    border-bottom: 5px solid rgb(60, 60, 60);
+}
+
+.lyrics {
+    line-height: 30px !important;
+}

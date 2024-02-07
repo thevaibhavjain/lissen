@@ -1,0 +1,17 @@
+#navbar {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: xx-large;
+  font-weight: 600;
+  padding: 10px;
+  background-color: #ff6b6b;
+  color: aliceblue;
+  z-index: 1000;
+}
+#navbar svg:hover {
+  background-color: initial;
+}

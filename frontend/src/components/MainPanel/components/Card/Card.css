@@ -1,0 +1,59 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    overflow: hidden;
+    padding: 15px;
+    transition: 200ms all ease-in;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: rgba(67, 67, 67, 0.941);
+}
+
+.card img {
+    opacity: 1;
+    border-radius: 5px;
+    max-height: 141px;
+    max-width: 141px;
+    overflow: hidden;
+    transition: 200ms all ease-in-out;
+}
+
+.card-play {
+    position: absolute;
+    opacity: 0;
+}
+.card .card-play{
+    transition: 200ms all ease-in-out;
+
+}
+.card:hover .card-play {
+    background-color: rgba(31, 31, 31, 0.899);
+    opacity: 1;
+    border-radius: 100%;
+}
+
+.album-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .track-name, .card .artists  {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+    margin-top: 5px;
+}
+
+.track-name {
+    font-size: large;
+    font-weight: 600;
+}

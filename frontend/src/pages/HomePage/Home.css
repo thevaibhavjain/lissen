@@ -1,0 +1,9 @@
+body {
+  position: relative;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #151414;
+  background-repeat: no-repeat;
+  margin: 0;
+  overflow-x: hidden;
+  color: aliceblue;
+}
