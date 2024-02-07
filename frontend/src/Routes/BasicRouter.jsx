@@ -8,6 +8,14 @@ import Song from "../pages/SongPage/Song";
 import Artist from "../pages/ArtistPage/Artist";
 import Navbar from "../components/Navbar/Navbar";
 import PlayFooter from "../components/PlayFooter/PlayFooter";
+import TopArtists from "../pages/TopArtistsPage/TopArtists";
+import TopCharts from "../pages/TopChartsPage/TopCharts";
+import TopPlaylists from "../pages/TopPlaylistsPage/TopPlaylists";
+import Search from "../pages/SearchPage/Search";
+import NewRelease from "../pages/NewReleasePage/NewRelease";
+import Radios from "../pages/RadiosPage/Radios";
+
+
 import { useRef } from "react";
 
 const BasicRouter = ({ playState }) => {
@@ -96,6 +104,12 @@ const BasicRouter = ({ playState }) => {
           path="/artist/:artist_id"
           element={<Artist control={playState} />}
         />
+        <Route path="/new-release" element={<NewRelease control={playState} />} />
+        <Route path="/top-artists" element={<TopArtists control={playState} />} />
+        <Route path="/top-charts" element={<TopCharts control={playState} />} />
+        <Route path="/featured-stations" element={<Radios control={playState} />} />
+        <Route path="/featured-playlists" element={<TopPlaylists control={playState} />} />
+        <Route path="/search" element={<Search control={playState} />} />
         <Route path="/radio/:query" element={<Radio control={playState} />} />
       </Routes>
       <PlayFooter control={playState} />
