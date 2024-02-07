@@ -6,13 +6,13 @@ import APIFetch from '../../utils/APIFetch';
 function Home() {
   const [resp, setResp] = useState("");
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const data = await APIFetch("getHome");
-  //     setResp(data);
-  //   };
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await APIFetch("getHome");
+      setResp(data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="Home">
