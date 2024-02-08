@@ -51,6 +51,7 @@
     text-overflow: ellipsis;
     max-width: 160px;
     margin-top: 5px;
+    text-transform: capitalize;
 }
 
 .track-name {

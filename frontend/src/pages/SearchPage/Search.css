@@ -1,0 +1,29 @@
+.search-box {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    height: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+    column-gap: 5px;
+}
+.search-box * {
+    border: none;
+    font-size: larger;
+    font-weight: 500;
+}
+.search-box .search-input {
+    background-color: aliceblue;
+    text-indent: 15px;
+}
+
+.search-box button {
+    color: aliceblue;
+    background-color: rgb(226, 108, 108) !important;
+    font-weight: 600;
+}
+
+.search-box button:hover {
+    background-color: rgb(231, 124, 124) !important;
+}

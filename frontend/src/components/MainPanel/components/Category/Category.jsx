@@ -29,7 +29,8 @@ const Category = ({ name, data }) => {
       type: item.type,
       title: item.title,
       image: item.image,
-      artists: item.more_info.artistMap.artists.map((item, _) => item.name) + "",
+      artists:
+        item.more_info.artistMap.artists.map((item, _) => item.name) + "",
     };
     return <Card key={index} data={parsed_data} />;
   }
@@ -42,7 +43,9 @@ const Category = ({ name, data }) => {
         type: item.type,
         title: item.title,
         image: item.image,
-        artists: item.more_info.artistMap.artists.map((item, _) => item.name) + " ",
+        artists: item.more_info.artistMap.artists
+          ? item.more_info.artistMap.artists.map((item, _) => item.name) + " "
+          : item.subtitle,
       };
     }
     if (item.type === "playlist") {
@@ -60,7 +63,16 @@ const Category = ({ name, data }) => {
         type: item.type,
         title: item.title,
         image: item.image,
-        artists: item.more_info.music,
+        artists: item.more_info.music ? item.more_info.music : item.subtitle,
+      };
+    }
+    if (item.type === "artist") {
+      parsed_data = {
+        id: item.artistid,
+        type: "artist",
+        title: item.title,
+        image: item.image.replace("150x150", "500x500"),
+        artists: item.subtitle
       };
     }
     return <Card key={index} data={parsed_data} />;
@@ -74,7 +86,8 @@ const Category = ({ name, data }) => {
       image: item.image,
       artists:
         item.more_info &&
-        item.more_info.uid | item.more_info && item.more_info.firstname,
+        item.more_info.uid | item.more_info &&
+        item.more_info.firstname,
     };
     return <Card key={index} data={parsed_data} />;
   }
@@ -113,7 +126,7 @@ const Category = ({ name, data }) => {
     <div className="category">
       <div className="category-name">{name.replace("_", " ")}</div>
       <div className="items">
-        {data.length > 1 &&
+        {data && data.length > 1 &&
           data.map((item, index) => {
             switch (name) {
               case "browse_discover":
@@ -134,6 +147,10 @@ const Category = ({ name, data }) => {
                 return handle_top_playlists(item, index);
               case "top_artists":
                 return handle_artist(item, index);
+              case "top_searches":
+                return handle_trending(item, index);
+              case "result":
+                return handle_trending(item, index);
               default:
                 return null;
             }

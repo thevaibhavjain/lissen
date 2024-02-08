@@ -25,7 +25,7 @@ class ServiceProvider {
     }
 
     async getTopSearches() {
-        const data = await this.request(`content.getTopSearches`);
+        const data = await this.request(`content.getTopSearches&ctx=web6dot0&api_version=4&_format=json&_marker=0`);
         return data;
     }
 
