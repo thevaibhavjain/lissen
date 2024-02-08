@@ -15,7 +15,7 @@ const Search = () => {
   };
 
   const searchData = async (query, count) => {
-    const data = await APIFetch(`search?query=${query.replace(" ", "+")}&page=${count}`);
+    const data = await APIFetch(`search?query=${query.replaceAll(" ", "+")}&page=${count}`);
     setResp(data);
   };
 
@@ -29,7 +29,7 @@ const Search = () => {
         clearTimeout(timer);
       }
       const newTimer = setTimeout(() => {
-        searchData(searchQuery, 30);
+        searchData(searchQuery, 1);
       }, 500);
       setTimer(newTimer);
     }
