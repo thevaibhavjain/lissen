@@ -6,7 +6,7 @@
   "scripts": {
     "start": "concurrently \"npm install:prod\" \"npm run start:backend\" \"npm run start:frontend\"",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "install:prod": "concurrently \"npm install\" \"npm run install:backend\" \"npm run install:frontend\"",
+    "install:prod": "concurrently \"npm run install:backend\" \"npm run install:frontend\"",
     "start:backend": "cd backend && npm start",
     "start:frontend": "cd frontend && npx serve -s build",
     "dev:frontend": "cd frontend && npm start",
