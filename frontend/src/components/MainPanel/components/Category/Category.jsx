@@ -70,7 +70,7 @@ const Category = ({ name, data }) => {
       parsed_data = {
         id: item.artistid,
         type: "artist",
-        title: item.title,
+        title: item.title ? item.title : item.name,
         image: item.image.replace("150x150", "500x500"),
         artists: item.subtitle
       };

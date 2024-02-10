@@ -8,6 +8,7 @@ const Search = () => {
   const [resp, setResp] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [timer, setTimer] = useState(null);
+  const [typeidx, setTypeidx] = useState(0);
 
   const fetchData = async () => {
     const data = await APIFetch(`getTopSearch`);
@@ -15,7 +16,9 @@ const Search = () => {
   };
 
   const searchData = async (query, count) => {
-    const data = await APIFetch(`search?query=${query.replaceAll(" ", "+")}&page=${count}`);
+    const data = await APIFetch(
+      `search?query=${query.replaceAll(" ", "+")}&page=${count}&type=${typeidx}`
+    );
     setResp(data);
   };
 
@@ -33,7 +36,7 @@ const Search = () => {
       }, 500);
       setTimer(newTimer);
     }
-  }, [searchQuery]);
+  }, [searchQuery, typeidx]);
 
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
@@ -57,13 +60,45 @@ const Search = () => {
         />
         <button onClick={handleSearchButtonClick}>Search</button>
       </div>
+      <div className="filter-box">
+        <div
+          className={"playlists" + (typeidx === 0 ? " active" : "")}
+          onClick={() => setTypeidx(0)}
+        >
+          Playlists
+        </div>
+        <div
+          className={"songs" + (typeidx === 1 ? " active" : "")}
+          onClick={() => setTypeidx(1)}
+        >
+          Songs
+        </div>
+        <div
+          className={"albums" + (typeidx === 2 ? " active" : "")}
+          onClick={() => setTypeidx(2)}
+        >
+          Albums
+        </div>
+        <div
+          className={"podcasts" + (typeidx === 3 ? " active" : "")}
+          onClick={() => setTypeidx(3)}
+        >
+          Podcasts
+        </div>
+        <div
+          className={"artists" + (typeidx === 4 ? " active" : "")}
+          onClick={() => setTypeidx(4)}
+        >
+          Artists
+        </div>
+      </div>
       {searchQuery.length < 1 ? (
         <div className="top-searches">
           <Category name={"top_searches"} data={resptop} />
         </div>
       ) : (
         <div className="search">
-          <Category name={"result"} data={resp.results}/>
+          <Category name={"result"} data={resp.results} />
         </div>
       )}
     </div>

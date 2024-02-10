@@ -85,8 +85,9 @@ class ServiceProvider {
         return data;
     }
     
-    async getSearch(query, page){
-        const data = await this.request(`search.getResults&p=${page}&q=${query}&_format=json&_marker=0&api_version=4&ctx=web6dot0&n=20`)
+    async getSearch(query, page, type){
+        var command = ["getPlaylistResults", "getResults", "getAlbumResults", `getMoreResults&params=%7B%22type%22:%22podcasts%22%7D&query=${query.replaceAll(" ", "+")}`, "getArtistResults"][type]
+        const data = await this.request(`search.${command}&p=${page}&q=${query}&_format=json&_marker=0&api_version=4&ctx=web6dot0&n=50`)
         return data;
     }
 

@@ -27,3 +27,29 @@
 .search-box button:hover {
     background-color: rgb(231, 124, 124) !important;
 }
+
+.filter-box {
+    margin: 10px 0;
+    background-color: rgb(32, 32, 32);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-items: center;
+    font-size: larger;
+    height: 35px;
+    border-radius: 5px;
+}
+.filter-box * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.filter-box .active {
+    background-color: #ff6b6b;;
+}

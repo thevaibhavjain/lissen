@@ -104,7 +104,7 @@ app.get('/api/getPlaylistById', asyncHandler(async (req, res) => {
 
 app.get('/api/search', asyncHandler(async (req, res) => {
     const query = req.query;
-    const data = await lib.getSearch(query.query, query.page);
+    const data = await lib.getSearch(query.query, query.page, query.type);
     await res.json(data);
 }));
 
