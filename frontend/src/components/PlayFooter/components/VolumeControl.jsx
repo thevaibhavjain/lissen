@@ -3,12 +3,12 @@ import { useState, useRef } from "react";
 const VolumeControl = ({ data }) => {
   const [volume, setVolume] = useState(1);
   const [sound, setSound] = useState(true);
-  
+
   const volupRef = useRef();
   const volmuteRef = useRef();
   const volumeSliderRef = useRef();
 
-  function toggleMute() {
+  const toggleMute = () => {
     var volumeUp = volupRef.current;
     var volumeMute = volmuteRef.current;
     var audio = data.audioRef.current;
@@ -22,7 +22,7 @@ const VolumeControl = ({ data }) => {
       volumeMute.style.display = "none";
       audio.muted = false;
     }
-  }
+  };
 
   const handleVolumeChange = () => {
     const volumeSlider = volumeSliderRef.current;
