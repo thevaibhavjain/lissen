@@ -5,7 +5,10 @@
   },
   "scripts": {
     "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "start:backend": "cd backend && npm start",
-    "start:frontend": "cd frontend && npx serve -s build"
+    "start:frontend": "cd frontend && npx serve -s build",
+    "dev:frontend": "cd frontend && npm start",
+    "dev:backend": "cd backend && npm start"
   }
 }
