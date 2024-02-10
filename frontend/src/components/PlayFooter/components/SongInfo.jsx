@@ -10,9 +10,9 @@ const SongInfo = ({ play_data }) => {
         <marquee scrollamount={3} className="song">
           {play_data.song}
         </marquee>
-        <a href={play_data.album_url} className="album">
+        <p className="album">
           {play_data.album}
-        </a>
+        </p>
       </div>
     </div>
   );

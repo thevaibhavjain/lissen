@@ -30,7 +30,7 @@ const SongDetail = ({ resp, liked, setLiked, control }) => {
         <div className="audience-detail">
           <span className="artists">
             <Link
-              to={`/album/${resp.albumid}`}
+              to={`/album/${resp.album_url.split("/").slice(-1)}`}
               dangerouslySetInnerHTML={{ __html: resp.album }}
             />
             &nbsp;by&nbsp;
