@@ -58,3 +58,12 @@
     font-size: large;
     font-weight: 600;
 }
+
+.album-image img {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.album-image img.loaded {
+  opacity: 1;
+}
