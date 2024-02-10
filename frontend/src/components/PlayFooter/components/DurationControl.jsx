@@ -12,7 +12,7 @@ const DurationControl = ({ data, play_data }) => {
     }
   };
   const handleTimeUpdate = () => {
-    if (data.audioRef.current) {
+    if (data.audioRef.current && duration > 0) {
       const updatedCurrentTime =
         (data.audioRef.current.currentTime / duration) * 100;
       setCurrentTime(updatedCurrentTime);
@@ -25,8 +25,8 @@ const DurationControl = ({ data, play_data }) => {
 
   const durationChange = () => {
     if (data.audioRef.current && durationRef.current) {
-      const seekTo = (durationRef.current.value / 100) * duration;
-      setCurrentTime(durationRef.current.value);
+      const seekTo = (parseFloat(durationRef.current.value) / 100) * duration;
+      setCurrentTime(parseFloat(durationRef.current.value));
       data.audioRef.current.currentTime = seekTo;
     }
   };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import APIFetch from '../../utils/APIFetch';
 import './TopPlaylists.css'
 import Category from '../../components/MainPanel/components/Category/Category';
+import CategorySkeleton from '../../components/MainPanel/components/Category/CategorySkeleton';
 
 const TopPlaylists = ({control}) => {
   const [resp, setResp] = useState("");
@@ -16,7 +17,14 @@ const TopPlaylists = ({control}) => {
 
   return (
     <div id="main">
-      {resp && <Category name={"featured_playlists"} data={resp.data} />}
+      {resp ? (
+        <Category name={"featured_playlists"} data={resp.data} />
+      ) : (
+        <>
+          <CategorySkeleton />
+          <CategorySkeleton />
+        </>
+      )}
     </div>
   );
 }

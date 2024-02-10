@@ -3,7 +3,8 @@ import React from "react";
 const MusicControls = ({ data }) => {
   return (
     <div className="music-controls">
-      <svg onClick={()=>data.togglePrevious()}
+      <svg
+        onClick={() => data.togglePrevious()}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         width="36"
@@ -13,7 +14,7 @@ const MusicControls = ({ data }) => {
       >
         <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
       </svg>
-      
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -31,7 +32,8 @@ const MusicControls = ({ data }) => {
         <path ref={data.pauseRef} d="M8 5v14l11-7z" />
       </svg>
 
-      <svg onClick={()=>data.toggleNext()}
+      <svg
+        onClick={() => data.toggleNext()}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         width="36"
