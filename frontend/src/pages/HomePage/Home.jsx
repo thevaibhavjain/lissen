@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <div className="Home">
-      {resp && <MainPanel data={resp} />}
+      <MainPanel data={resp} />
     </div>
   );
 }
