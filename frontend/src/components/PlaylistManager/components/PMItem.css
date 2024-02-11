@@ -1,0 +1,26 @@
+.pmitem:hover {
+  background-color: rgb(30, 30, 30);
+  cursor: pointer;
+}
+
+.pmi-name {
+      white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.delete-icon {
+  padding: 10px !important;
+  border-radius: 50%;
+  transition: all 200ms ease-out;
+}
+
+.delete-icon:hover {
+  background-color: rgb(63, 63, 63);
+}
+
+.pmiactive {
+  color:  #38dd72;
+  background-color: rgb(68, 68, 68);
+}

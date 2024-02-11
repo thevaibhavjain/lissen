@@ -72,12 +72,13 @@
   align-items: center;
 }
 
-.duration {
+.playbar .duration {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .playbar svg {
   padding: 5px;
 }

@@ -4,7 +4,7 @@
     "serve": "^14.2.1"
   },
   "scripts": {
-    "start": "npm run install:prod && concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "install:prod": "npm run install:backend && npm run install:frontend",
     "start:backend": "cd backend && npm start",

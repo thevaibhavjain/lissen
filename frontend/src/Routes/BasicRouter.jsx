@@ -14,7 +14,7 @@ import TopPlaylists from "../pages/TopPlaylistsPage/TopPlaylists";
 import Search from "../pages/SearchPage/Search";
 import NewRelease from "../pages/NewReleasePage/NewRelease";
 import Radios from "../pages/RadiosPage/Radios";
-
+import PlaylistManager from "../components/PlaylistManager/PlaylistManager";
 
 import { useRef } from "react";
 
@@ -113,6 +113,7 @@ const BasicRouter = ({ playState }) => {
         <Route path="/radio/:query" element={<Radio control={playState} />} />
       </Routes>
       <PlayFooter control={playState} />
+      <PlaylistManager control={playState} />
     </BrowserRouter>
   );
 };
