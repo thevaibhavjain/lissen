@@ -1,7 +1,17 @@
 {
+  "name": "lissen-electron",
+  "version": "0.1.0",
+  "main": "main.js",
+  "license": "MIT",
+  "private": false,
   "devDependencies": {
+    "electron-serve": "^1.0.0",
     "concurrently": "^8.2.2",
-    "serve": "^14.2.1"
+    "serve": "^14.2.1",
+    "electron": "^28.2.2",
+    "electron-builder": "^24.9.1",
+    "react-scripts": "^5.0.1",
+    "wait-on": "^5.2.0"
   },
   "scripts": {
     "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
@@ -12,6 +22,8 @@
     "dev:frontend": "cd frontend && npm start",
     "dev:backend": "cd backend && npm start",
     "install:backend": "cd backend && npm install",
-    "install:frontend": "cd frontend && npm install"
+    "install:frontend": "cd frontend && npm install",
+    "electron": "wait-on http://localhost:3000 && electron .",
+    "app": "concurrently \"npm run start\" \"npm run electron\""
   }
 }
