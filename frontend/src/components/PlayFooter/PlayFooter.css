@@ -74,6 +74,9 @@
 
 .duration {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .playbar svg {
   padding: 5px;
@@ -84,7 +87,9 @@
   background-color: #535353;
 }
 
-
+.duration .duration-lbl {
+  margin: 0 15px;
+}
 
 .volume-controls {
   display: flex;
@@ -92,7 +97,7 @@
 }
 
 .volume-slider {
-  margin: 0 20px;
+  margin: 0 30px 0 10px;
   width: 100px;
   accent-color: #38dd72;
 }

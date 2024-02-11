@@ -41,6 +41,12 @@ const DurationControl = ({ data, play_data }) => {
         value={currentTime}
         onChange={() => durationChange()}
       />
+      <div className="duration-lbl">
+        {Math.floor(currentTime / 60)}:
+        {("0" + Math.floor(currentTime % 60)).slice(-2)}/
+        {Math.floor(duration / 60)}:
+        {("0" + Math.floor(duration % 60)).slice(-2)}
+      </div>
       <audio
         ref={data.audioRef}
         onLoadedMetadata={handleLoadedMetadata}
