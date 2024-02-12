@@ -68,10 +68,10 @@ const Category = ({ name, data }) => {
     }
     if (item.type === "artist") {
       parsed_data = {
-        id: item.artistid,
+        id: item.artistid | item.id,
         type: "artist",
         title: item.title ? item.title : item.name,
-        image: item.image.replace("150x150", "500x500"),
+        image: item.image.replace("150x150", "500x500").replace("50x50", "500x500"),
         artists: item.subtitle
       };
     }
