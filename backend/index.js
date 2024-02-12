@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const fs = require('fs');
+const { createLogger, transports, format } = require('winston');
 
 const ServiceProvider = require("./lib/musiclib");
 
@@ -12,16 +12,20 @@ const port = 3001;
 app.use(cors());
 app.use(express.json());
 
+const logger = createLogger({
+    level: 'error',
+    format: format.combine(
+        format.timestamp(),
+        format.json()
+    ),
+    transports: [
+        new transports.File({ filename: 'logs/error.log', level: 'error' }),
+        new transports.Console({ format: format.simple() })
+    ]
+});
+
 app.use((err, req, res, next) => {
-    const timestamp = new Date().toISOString();
-    const errorMessage = `[${timestamp}] ${err}\n`;
-
-    fs.appendFile(`logs/error-${timestamp}.log`, errorMessage, (err) => {
-        if (err) {
-            console.error('Error writing to log file:', err);
-        }
-    });
-
+    logger.error(err.stack);
     res.status(500).json({ error: 'Internal server error' });
 });
 
