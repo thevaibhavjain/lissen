@@ -30,7 +30,9 @@ const Category = ({ name, data }) => {
       title: item.title,
       image: item.image,
       artists:
-        item.more_info.artistMap.artists.map((item, _) => item.name) + "",
+        item.more_info.artistMap ? item.more_info.artistMap.artists.map(
+          (item, _) => item.name
+        ) + "" : item.subtitle ? item.subtitle : "Various artists",
     };
     return <Card key={index} data={parsed_data} />;
   }
